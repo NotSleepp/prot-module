@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Aquí puedes agregar tus estilos personalizados */
+@layer components {
+  /* Ejemplo de clase personalizada reutilizable */
+  .btn-primary {
+    @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors;
+  }
+}
+
+@layer utilities {
+  /* Ejemplo de utilidad personalizada */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
