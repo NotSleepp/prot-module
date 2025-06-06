@@ -1,13 +1,15 @@
 <template>
   <button
     @click="toggleTheme"
-    class="fixed top-4 right-4 p-2 rounded-lg bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:focus:ring-offset-gray-900 z-50"
+    class="relative p-2.5 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 dark:focus:ring-offset-gray-900 group overflow-hidden border border-gray-200 dark:border-gray-700"
     :title="themeStore.isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
   >
+    <!-- Fondo animado -->
+    <div class="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-full"></div>
+    
     <!-- Sol (Modo claro) -->
     <svg
-      v-if="themeStore.isDark"
-      class="w-6 h-6 text-yellow-500"
+      class="w-5 h-5 text-yellow-500 transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-180 relative z-10"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -21,8 +23,7 @@
     </svg>
     <!-- Luna (Modo oscuro) -->
     <svg
-      v-else
-      class="w-6 h-6 text-gray-700"
+      class="w-5 h-5 text-gray-700 transition-all duration-300 transform group-hover:scale-110 group-hover:-rotate-12 relative z-10"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -45,4 +46,4 @@ const themeStore = useThemeStore();
 const toggleTheme = () => {
   themeStore.toggleTheme();
 };
-</script> 
+</script>
