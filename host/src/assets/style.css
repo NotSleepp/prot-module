@@ -2,17 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Aquí puedes agregar tus estilos personalizados */
+/* Estilos personalizados */
 @layer components {
-  /* Ejemplo de clase personalizada reutilizable */
   .btn-primary {
-    @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors;
+    @apply px-4 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 shadow-lg hover:shadow-xl;
   }
 }
 
 @layer utilities {
-  /* Ejemplo de utilidad personalizada */
   .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
+}
+
+/* Optimizaciones de rendimiento y suavidad */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Configuración de NProgress más elegante */
+#nprogress .bar {
+  background: linear-gradient(90deg, #10b981, #14b8a6) !important;
+  height: 3px !important;
+  box-shadow: 0 0 10px #10b981 !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #10b981, 0 0 5px #10b981 !important;
+}
+
+/* Mejoras para animaciones */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Scrollbar global más elegante */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
 }

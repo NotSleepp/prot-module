@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.2.0",
     "@originjs/vite-plugin-federation": "^1.4.1",
     "@vue-hero-icons/outline": "^1.7.2",
     "heroicons": "^2.2.0",
